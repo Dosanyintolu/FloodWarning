@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FloodWarning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7ei-hR-DN2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oM-hk-Bp2">
+                                <rect key="frame" x="142" y="662" width="130.66666666666669" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Add Flood Warning">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFloodWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABf-eO-lbI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ei-hR-DN2" secondAttribute="trailing" id="5Zx-tI-krE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ei-hR-DN2" secondAttribute="bottom" id="6fu-OH-ggC"/>
+                            <constraint firstItem="3oM-hk-Bp2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="662" id="FpH-jb-RXo"/>
+                            <constraint firstItem="7ei-hR-DN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hqo-m1-UTl"/>
+                            <constraint firstItem="3oM-hk-Bp2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pxs-Kn-weU"/>
+                            <constraint firstItem="3oM-hk-Bp2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141.66999999999999" id="sH9-qb-jwJ"/>
+                            <constraint firstItem="7ei-hR-DN2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sdq-9c-QJp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="floodButton" destination="3oM-hk-Bp2" id="nTR-3j-sjG"/>
+                        <outlet property="mapView" destination="7ei-hR-DN2" id="NYW-pO-P0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="85.59782608695653"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
