@@ -8,12 +8,18 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var floodButton: UIButton!
     
+    private lazy var db: Firestore = {
+        
+        let firestoreDB = Firestore.firestore()
+        return firestoreDB
+    }()
     private lazy var locationManager: CLLocationManager = {
        
         let manager = CLLocationManager()
@@ -50,6 +56,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         annotation.coordinate = location.coordinate
         self.mapView.addAnnotation(annotation)
         
+        saveFloodToFirebase()
+        
+    }
+    
+    private func saveFloodToFirebase() {
+        self.db.collection("Flooded-regions").addDocument(data:["latitude" : 12.00, "longitude" : 11.00]){ (error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("saved")
+            }
+        }
     }
     
     private func setupUI() {

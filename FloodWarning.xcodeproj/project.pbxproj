@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CADAE1A5BBA38860C974C73 /* Pods_FloodWarning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DA42AA5ACE2087F35549F /* Pods_FloodWarning.framework */; };
 		76670EAC2539C9AF00BC5100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76670EAB2539C9AF00BC5100 /* AppDelegate.swift */; };
 		76670EAE2539C9AF00BC5100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76670EAD2539C9AF00BC5100 /* SceneDelegate.swift */; };
 		76670EB02539C9AF00BC5100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76670EAF2539C9AF00BC5100 /* ViewController.swift */; };
 		76670EB32539C9AF00BC5100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76670EB12539C9AF00BC5100 /* Main.storyboard */; };
 		76670EB52539C9B200BC5100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76670EB42539C9B200BC5100 /* Assets.xcassets */; };
 		76670EB82539C9B200BC5100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76670EB62539C9B200BC5100 /* LaunchScreen.storyboard */; };
+		76F9E8D2253CFC3700FB96D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76F9E8D1253CFC3700FB96D6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56B4BE68EF638811A6B5DCFF /* Pods-FloodWarning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloodWarning.debug.xcconfig"; path = "Target Support Files/Pods-FloodWarning/Pods-FloodWarning.debug.xcconfig"; sourceTree = "<group>"; };
+		61290D6D822E58B9231525F8 /* Pods-FloodWarning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloodWarning.release.xcconfig"; path = "Target Support Files/Pods-FloodWarning/Pods-FloodWarning.release.xcconfig"; sourceTree = "<group>"; };
 		76670EA82539C9AF00BC5100 /* FloodWarning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloodWarning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76670EAB2539C9AF00BC5100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76670EAD2539C9AF00BC5100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		76670EB42539C9B200BC5100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76670EB72539C9B200BC5100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76670EB92539C9B200BC5100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F9E8D1253CFC3700FB96D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		869DA42AA5ACE2087F35549F /* Pods_FloodWarning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloodWarning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CADAE1A5BBA38860C974C73 /* Pods_FloodWarning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070530904BC553E35B3D1970 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				869DA42AA5ACE2087F35549F /* Pods_FloodWarning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A78BA2C227658405CC1DBC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56B4BE68EF638811A6B5DCFF /* Pods-FloodWarning.debug.xcconfig */,
+				61290D6D822E58B9231525F8 /* Pods-FloodWarning.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		76670E9F2539C9AF00BC5100 = {
 			isa = PBXGroup;
 			children = (
 				76670EAA2539C9AF00BC5100 /* FloodWarning */,
 				76670EA92539C9AF00BC5100 /* Products */,
+				5A78BA2C227658405CC1DBC5 /* Pods */,
+				070530904BC553E35B3D1970 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				76670EB42539C9B200BC5100 /* Assets.xcassets */,
 				76670EB62539C9B200BC5100 /* LaunchScreen.storyboard */,
 				76670EB92539C9B200BC5100 /* Info.plist */,
+				76F9E8D1253CFC3700FB96D6 /* GoogleService-Info.plist */,
 			);
 			path = FloodWarning;
 			sourceTree = "<group>";
@@ -82,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76670EBC2539C9B200BC5100 /* Build configuration list for PBXNativeTarget "FloodWarning" */;
 			buildPhases = (
+				428BB9A70A20B2083F34E01F /* [CP] Check Pods Manifest.lock */,
 				76670EA42539C9AF00BC5100 /* Sources */,
 				76670EA52539C9AF00BC5100 /* Frameworks */,
 				76670EA62539C9AF00BC5100 /* Resources */,
+				6F440F638B8A81555F4CDA5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +162,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				76670EB82539C9B200BC5100 /* LaunchScreen.storyboard in Resources */,
+				76F9E8D2253CFC3700FB96D6 /* GoogleService-Info.plist in Resources */,
 				76670EB52539C9B200BC5100 /* Assets.xcassets in Resources */,
 				76670EB32539C9AF00BC5100 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		428BB9A70A20B2083F34E01F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FloodWarning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F440F638B8A81555F4CDA5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FloodWarning/Pods-FloodWarning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FloodWarning/Pods-FloodWarning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FloodWarning/Pods-FloodWarning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76670EA42539C9AF00BC5100 /* Sources */ = {
@@ -291,6 +363,7 @@
 		};
 		76670EBD2539C9B200BC5100 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56B4BE68EF638811A6B5DCFF /* Pods-FloodWarning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +383,7 @@
 		};
 		76670EBE2539C9B200BC5100 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61290D6D822E58B9231525F8 /* Pods-FloodWarning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
