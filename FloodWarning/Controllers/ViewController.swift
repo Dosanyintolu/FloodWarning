@@ -14,7 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var floodButton: UIButton!
-    
+    private var documentRef: DocumentReference?
     private lazy var db: Firestore = {
         
         let firestoreDB = Firestore.firestore()
@@ -35,6 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.delegate = self
         self.locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
+        setupUI()
     }
     
     
@@ -46,28 +47,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     @IBAction func addFloodWarning(_ sender: Any) {
     
-        guard let location = self.locationManager.location else {
-            return
-        }
-        
-        let annotation = MKPointAnnotation()
-        annotation.title = "Flooded"
-        annotation.subtitle = "Reported 12:00am"
-        annotation.coordinate = location.coordinate
-        self.mapView.addAnnotation(annotation)
-        
         saveFloodToFirebase()
         
     }
     
+    private func addFloodToMap(_ flood: Flood) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: flood.latitude, longitude: flood.longitude)
+        annotation.title = "This area is flooded"
+        annotation.subtitle = flood.reportedDate.convertDateToString()
+        self.mapView.addAnnotation(annotation)
+    }
+    
     private func saveFloodToFirebase() {
-        self.db.collection("Flooded-regions").addDocument(data:["latitude" : 12.00, "longitude" : 11.00]){ (error) in
-            if let error = error {
+        guard let location = self.locationManager.location else {
+            return
+        }
+
+        
+        var flood = Flood(location.coordinate.latitude, location.coordinate.longitude)
+        
+        self.db.collection("flooded-regions").addDocument(data: flood.toDictionary()) { [weak self] (error) in
+            if let error = error  {
                 print(error)
             } else {
-                print("saved")
+                flood.documentID = self?.documentRef?.documentID
+                self?.addFloodToMap(flood)
             }
         }
+        
     }
     
     private func setupUI() {
