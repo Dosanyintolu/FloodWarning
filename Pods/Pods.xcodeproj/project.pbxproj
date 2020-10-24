@@ -1875,6 +1875,7 @@
 		75FF699EFE0A1DCB7E44F6EFF24BDF2A /* http_connection_manager.upb.h in Copy src/core/ext/upb-generated/envoy/config/filter/network/http_connection_manager/v2 Private Headers */ = {isa = PBXBuildFile; fileRef = 14C4DC6FF43C44B00412F67B854A0BC5 /* http_connection_manager.upb.h */; };
 		76135EAE4704E277A75E34F8AF50C45F /* authority.cc in Sources */ = {isa = PBXBuildFile; fileRef = 268AD48DAC3BE68D8C78FB66273DEEE3 /* authority.cc */; settings = {COMPILER_FLAGS = "-DGRPC_ARES=0 -Wno-comma -DGRPC_SHADOW_BORINGSSL_SYMBOLS -fno-objc-arc"; }; };
 		761BE1D89DEA008767ED7D495EB8E900 /* FIRErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C482C57F1DCECFCF9DD9E024BFB71D /* FIRErrors.m */; };
+		76337BEC25433EB70042A091 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3C5E8A360B7FC2E35263746B9A73B /* Foundation.framework */; };
 		76413E862C5EAC88DF4F43AD5FC5FDD6 /* client_context.h in Headers */ = {isa = PBXBuildFile; fileRef = BC34ED5079626E14709B28C543840615 /* client_context.h */; };
 		7654109A0067CCE5A15DC38F165648AB /* alts_grpc_privacy_integrity_record_protocol.h in Copy src/core/tsi/alts/zero_copy_frame_protector Private Headers */ = {isa = PBXBuildFile; fileRef = 124DDD8FA7CF86FDC7D9533D6FED5A66 /* alts_grpc_privacy_integrity_record_protocol.h */; };
 		7675DABB72EA71976D525A39886833FD /* avl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A70C446A58B827C6E6673BA8CAC92EE /* avl.h */; };
@@ -3050,7 +3051,6 @@
 		C07F4802A4B31A3E9B267386D73AF719 /* ssl_utils_config.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E37C2BD997774291B4E2A7C7596F8A /* ssl_utils_config.h */; };
 		C0857B0598FF2E5E697990B8A31E5051 /* security_connector.cc in Sources */ = {isa = PBXBuildFile; fileRef = 81F83DD2250F0DB4072E5E2754BA28FF /* security_connector.cc */; settings = {COMPILER_FLAGS = "-DGRPC_ARES=0 -Wno-comma -DGRPC_SHADOW_BORINGSSL_SYMBOLS -fno-objc-arc"; }; };
 		C088E90113E912B456C777B40ED48EAE /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C8A853E70A81CE42C2D307B3AAB33A1 /* iterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0ACAAC916865BD6458C4466BC7971C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3C5E8A360B7FC2E35263746B9A73B /* Foundation.framework */; };
 		C0B2A3413B44A6500B4F45FE2CBF59D1 /* load_system_roots.h in Copy src/core/lib/security/security_connector Private Headers */ = {isa = PBXBuildFile; fileRef = EC8A27BDDF2E81765A5613CCD99909DD /* load_system_roots.h */; };
 		C0BEBFDBF60F37A6D8CBB1FC9F52B93F /* handshaker_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B5D0F0667FCC62985E57AEBED20129 /* handshaker_factory.h */; };
 		C0C269E3B3157FC3A7E57F68C0AAADE3 /* bin_encoder.h in Copy src/core/ext/transport/chttp2/transport Private Headers */ = {isa = PBXBuildFile; fileRef = EDC7F999F1BFD9357EB41238BE498F73 /* bin_encoder.h */; };
@@ -11016,7 +11016,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0ACAAC916865BD6458C4466BC7971C6 /* Foundation.framework in Frameworks */,
+				76337BEC25433EB70042A091 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

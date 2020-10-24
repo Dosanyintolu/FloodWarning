@@ -33,6 +33,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         mapView.delegate = self
         self.locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
@@ -43,6 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     private func UpdateMapUI() {
         
         DispatchQueue.main.async {
+            self.mapView.removeAnnotations((self.mapView.annotations))
             for flood in self.flood {
                 self.addFloodToMap(flood)
             }
@@ -108,27 +110,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             annotationView?.image = UIImage(named: "flood-annotation")
             annotationView?.rightCalloutAccessoryView = UIButton.buttonForRightAccessoryView()
         }
-        
         return annotationView
     }
+    
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let floodAnnotation = view.annotation as? FloodAnnotation {
+            
+            let flood = floodAnnotation.flood
+            self.db.collection("flooded-regions").document(flood.documentID!).delete { error in
+                
+                if let error = error {
+                    print("Error removing document: \(error)")
+                }
+            }
+        }
+    }
+    
     
     private func saveFloodToFirebase() {
         guard let location = self.locationManager.location else {
             return
         }
 
-        
         var flood = Flood(location.coordinate.latitude, location.coordinate.longitude)
-        
-        self.db.collection("flooded-regions").addDocument(data: flood.toDictionary()) { [weak self] (error) in
+        self.documentRef = self.db.collection("flooded-regions").addDocument(data: flood.toDictionary()) { [weak self] (error) in
             if let error = error  {
                 print(error)
             } else {
-                flood.documentID = self?.documentRef?.documentID
+                flood.documentID = self?.documentRef!.documentID
                 self?.addFloodToMap(flood)
             }
         }
-        
     }
     
     private func setupUI() {
